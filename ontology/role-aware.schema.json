@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bonsai/palantir-orchestra/blob/main/ontology/role-aware.schema.json",
+  "title": "Scene Phase Role Aware Skill",
+  "type": "object",
+  "required": ["scene", "phase", "role", "aware", "skill"],
+  "properties": {
+    "scene": {"type": "string", "description": "現在いる場"},
+    "phase": {"type": "string", "description": "現在のフェーズ"},
+    "role": {"type": "string", "description": "この場面で負う責任"},
+    "aware": {"type": "array", "description": "注意を向ける対象", "items": {"type": "string"}},
+    "skill": {"type": "array", "description": "Awareした結果として実行できる行動", "items": {"type": "string"}},
+    "must_not": {"type": "array", "items": {"type": "string"}}
+  }
+}
