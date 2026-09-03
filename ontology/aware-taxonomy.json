@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FDE Attention Taxonomy",
+  "description": "何にAwareであるべきかを共通語彙として定義する",
+  "type": "object",
+  "properties": {
+    "human": {"type": "array", "items": {"type": "string"}},
+    "process": {"type": "array", "items": {"type": "string"}},
+    "information": {"type": "array", "items": {"type": "string"}},
+    "system": {"type": "array", "items": {"type": "string"}},
+    "risk": {"type": "array", "items": {"type": "string"}},
+    "deviation": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
