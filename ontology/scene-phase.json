@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FDE Scene Phase Vocabulary",
+  "type": "object",
+  "required": ["scenes", "phases", "relations"],
+  "properties": {
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "description": {"type": "string"}
+        }
+      }
+    },
+    "phases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "primary_aware"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "primary_aware": {"type": "array", "items": {"type": "string"}},
+          "skills": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["scene", "phase", "attention"],
+        "properties": {
+          "scene": {"type": "string"},
+          "phase": {"type": "string"},
+          "attention": {"type": "array", "items": {"type": "string"}},
+          "role": {"type": "string"}
+        }
+      }
+    }
+  }
+}
