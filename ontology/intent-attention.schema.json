@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bonsai/palantir-orchestra/blob/main/ontology/intent-attention.schema.json",
+  "title": "Intent Attention Model",
+  "type": "object",
+  "required": ["intent", "attention"],
+  "properties": {
+    "intent": {
+      "type": "array",
+      "description": "何を実現しようとしているか",
+      "items": {"type": "string"}
+    },
+    "attention": {
+      "type": "array",
+      "description": "何を観測・優先・追跡するか",
+      "items": {
+        "type": "object",
+        "required": ["target", "reason"],
+        "properties": {
+          "target": {"type": "string"},
+          "reason": {"type": "string"},
+          "priority": {"type": "number"},
+          "evidence": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "deviation": {
+      "type": "array",
+      "description": "期待と現場の差分",
+      "items": {"type": "string"}
+    }
+  }
+}
