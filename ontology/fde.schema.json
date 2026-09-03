@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bonsai/palantir-orchestra/blob/main/ontology/fde.schema.json",
+  "title": "FDE Observation Model",
+  "type": "object",
+  "required": ["field", "observation", "symbols", "structure", "model", "computation", "operation", "improvement"],
+  "properties": {
+    "field": {"type": "string"},
+    "observation": {"type": "array", "items": {"type": "string"}},
+    "symbols": {"type": "array", "items": {"enum": ["Entity", "Event", "State", "Action", "Decision", "Constraint"]}},
+    "structure": {"type": "array", "items": {"type": "string"}},
+    "model": {"type": "object"},
+    "computation": {"type": "object"},
+    "operation": {"type": "object"},
+    "improvement": {"type": "object"},
+    "intent": {"type": "array", "items": {"type": "string"}},
+    "attention": {"type": "array", "items": {"type": "string"}},
+    "deviation": {"type": "array", "items": {"type": "string"}}
+  }
+}
